@@ -12,17 +12,16 @@ from handle_link import handle_link
 def markdown_to_html_node(markdown):
     parent_node = ParentNode("div", children=[])
     blocks = markdown_to_blocks(markdown)
-
     for block in blocks:
 
         result = block_to_block_type(block)
         match result:
            
-         #case BlockType.LINK:
-              #  link_node = handle_link(block)
-             #   parent_node.children.append(link_node)
-            #ase BlockType.IMAGE:
-            #    parent_node.children.append(image_node_handler(block)) """
+            case BlockType.LINK:
+                link_node = handle_link(block)
+                parent_node.children.append(link_node)
+            case BlockType.IMAGE:
+                parent_node.children.append(image_node_handler(block))
             
             case BlockType.QUOTE:
                 parent_node.children.append(handle_qoute(block))

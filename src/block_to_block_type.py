@@ -23,11 +23,12 @@ def block_to_block_type(blocks):
     rank = 0
 
     for line in blocks.split("\n"):
+        if re.findall(r"^(\[.*?\])(\(.*?\))", line) != []:
+            return BlockType.LINK
+        if re.findall(f"(!\[.*?\]\(.*?\))", line) != []:
+            return BlockType.IMAGE
+    for line in blocks.split("\n"):
         line = line.strip()
-        #if re.findall(r"(\[.*?\]\(.*?\))", line) != []:
-        #    return BlockType.LINK
-        #if re.findall(f"(!\[.*?\]\(.*?\))", line) != []:
-        #    return BlockType.IMAGE
         if re.findall(r"^(\d)\.\s" , line) != []:
             rank = int(re.findall(r"^(\d)\.\s", line )[0])
             break
@@ -43,7 +44,7 @@ def block_to_block_type(blocks):
         if not line:
             continue
         if line:
-            if heading and [] == re.findall(r"^([#]{1,6}\s[\w\d\s\,\-\(\)\"\*\,\>]+?)$", line.strip()):
+            if heading and [] == re.findall(r"^([#]{1,6}[\w\d\s\,\.\-\(\)\"\*\,\>]+?)$", line.strip()):
 
                 heading = False
                 

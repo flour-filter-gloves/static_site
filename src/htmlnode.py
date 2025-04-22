@@ -43,14 +43,14 @@ class ParentNode(HTMLNode):
         self.value = None
 
     def to_html(self):
-        for child_index in range (len(self.children)):
-            if self.children[child_index].value == "":
-                del self.children[child_index]
+
         if self.tag is None:
             raise ValueError("ParentNodes must have  tag")
         if self.children is None:
             raise ValueError("ParentNodes must have children")
-        
+        for child_index in range (len(self.children)):
+            if self.children[child_index].value == "":
+                del self.children[child_index]        
         result = f"<{self.tag}>"
 
         for child in self.children:
@@ -60,5 +60,6 @@ class ParentNode(HTMLNode):
             result+=f"</ol>"
         else:
             result+=f"</{self.tag}>"
+        
         return result
     

@@ -52,9 +52,8 @@ def generate_page_recursivly(from_path, template_path, dest_path , direc_list = 
                             content_text = template_split[line_no].replace("{{ Content }}", template_content.to_html())
                             template_split[line_no] = content_text
                     
-                    
                     with open(os.path.join(dest_path,"index.html" ) , 'w') as html:
-                        html.write("\n".join(template_split))
+                        html.write("".join(template_split))
                                 
             else:
                 os.mkdir(os.path.join(dest_path, direc_or_file))

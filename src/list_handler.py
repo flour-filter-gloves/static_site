@@ -8,9 +8,11 @@ def unordered_handler(blocks):
     for index in range(len(block_split)):
         # Remove leading whitespace and the hyphen
         repl = re.sub(r"^\s*-\s*", "", block_split[index])
+        
         if repl.strip():  # Check if repl is not just whitespace
             li_node = ParentNode(tag="li", children=[])
             text = text_to_textnode(repl)
+            
             for node in text:
                 li_node.children.append(text_node_to_html_node(node))
 

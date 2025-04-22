@@ -39,7 +39,7 @@ Tolkien's Middle-earth is a realm of breathtaking diversity and realism, brought
 - **Geographical Realism**: The landscape of Middle-earth, from the Shire's pastoral hills to the shadowy depths of Mordor, is depicted with such vividness that it feels as tangible as our own world.
 - **Historical Depth**: The legendarium is imbued with a sense of history, with ruins, artifacts, and lore that hint at bygone eras, giving the world a lived-in, authentic feel.
 
-## Themes of _Timeless_ Relevance
+### Themes of _Timeless_ Relevance
 
 ### The _Struggle_ of Good vs. Evil
 
