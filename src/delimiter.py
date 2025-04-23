@@ -41,4 +41,3 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
         new_nodes.append(TextNode(text, TextType.TEXT))
     return new_nodes
 node = TextNode("This is text with a **bolded phrase** in the middle", TextType.TEXT)
-new_nodes = split_nodes_delimiter([node], "**", TextType.BOLD)

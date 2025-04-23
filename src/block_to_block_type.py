@@ -54,9 +54,6 @@ def block_to_block_type(blocks):
                 unordered_list = False
             if ordered_list and re.findall(pattern_ordered, line.strip()) == []:
                 ordered_list = False
-
-            #if ordered_list == True and int(re.findall(r"^(\d)\.\s", line)[0]) != rank:
-            #    ordered_list = False
             
             if ordered_list:
                 rank += 1
@@ -71,38 +68,3 @@ def block_to_block_type(blocks):
     else:
         return BlockType.PARAGRAPH
     
-    
-markdown ="""
-## Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
-
-
-This is a paragraph of text.
-
-
-This is a **bold** word.
-
-
-This is an _italic_ word.
-
-This is a paragraph with a [link](https://www.google.com).
-
-![alt text for image](url/of/image.jpg)
-
-- Item 1
-- Item 2
-- Item 3
-
-1. Item 1
-2. Item 2
-3. Item 3
-"""

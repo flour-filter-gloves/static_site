@@ -12,11 +12,10 @@ def copy_static(dest=os.path.join(os.getcwd()) ,src=None, direc_list = None):
                 os.mkdir(os.path.join(dest,item))
                 copy_static(os.path.join(dest,item),os.path.join(src,item), os.listdir(os.path.join(src,item)))                
     else:
-        if os.path.exists(os.path.join(dest,"public")):
-                shutil.rmtree(os.path.join(dest,"public"))
-                os.mkdir(os.path.join(dest,"public"))
+        if os.path.exists(os.path.join(dest,"docs")):
+                shutil.rmtree(os.path.join(dest,"docs"))
+                os.mkdir(os.path.join(dest,"docs"))
         else:
-             os.mkdir(os.path.join(dest,"public"))
-        copy_static(dest=os.path.join(os.getcwd(), "public"),src=os.path.join(os.getcwd(),"static"),direc_list=os.listdir(os.path.join(os.getcwd(),"static")))
+             os.mkdir(os.path.join(dest,"docs"))
+        copy_static(dest=os.path.join(os.getcwd(), "docs"),src=os.path.join(os.getcwd(),"static"),direc_list=os.listdir(os.path.join(os.getcwd(),"static")))
 
-copy_static()
